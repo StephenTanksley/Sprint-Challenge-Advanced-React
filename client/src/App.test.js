@@ -18,4 +18,3 @@ afterEach(rtl.cleanup);
     ReactDOM.render(<App />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
-  
