@@ -1,12 +1,13 @@
 import React from 'react'
+import {Container} from './styled'
 
 export default function PlayerCard(player) {
     console.log(player)
     return (
-        <div>
-            <h2 className="name">Name: {player.player.name}</h2>
-            <h3>Country: {player.player.country}</h3>
-            <h3>Searches: {player.player.searches}</h3>
-        </div>
+        <Container>
+            <h4 className="name">Name: {player.player.name}</h4>
+            <p>Country: {player.player.country}</p>
+            <p>Searches: {player.player.searches}</p>
+        </Container>
     );
 };

@@ -1,13 +1,12 @@
 import React from 'react'
-import {Container} from './styled'
+import {CardDisplay} from './styled'
 // import {useLocalStorage} from '../utils/useLocalStorage'
 import PlayersCard from './PlayersCard'
 
 export default function PlayersList ({ players }) {
 
     return (
-        <div>
-            <Container>
+        <CardDisplay>
             {players && players.map(player => {
                 return (
                     <PlayersCard 
@@ -15,7 +14,6 @@ export default function PlayersList ({ players }) {
                         player={player} 
                         />
                         )})}
-                        </Container>
-        </div>
+        </CardDisplay>
     )
 }
