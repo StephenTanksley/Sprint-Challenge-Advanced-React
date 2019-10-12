@@ -9,6 +9,7 @@ class App extends Component {
     this.state = {}
   }
 
+
   componentDidMount() {
     axios.get('http://localhost:5000/api/players')
     .then(response => {
@@ -24,6 +25,9 @@ class App extends Component {
     return (
       <div className="App">
         <h2>Women's World Cup Player Searches</h2>
+        {/* <button 
+          className="dark-button"
+          onClick={e => {}>Dark Mode</button> */}
           <PlayersList players={this.state.players} />
       </div>
     );
