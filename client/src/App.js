@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios'
-import useAxios from './utils/axios'
-import logo from './logo.svg';
 import './App.css';
+import PlayersList from './components/PlayersList';
 
 class App extends Component {
   constructor () {
@@ -11,14 +10,21 @@ class App extends Component {
   }
 
   componentDidMount() {
-    useAxios('http://localhost:5000/api/players')
-  }
-
+    axios.get('http://localhost:5000/api/players')
+    .then(response => {
+        this.setState({players: response.data})
+        console.log(this.state.players)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    }
 
   render () {
     return (
       <div className="App">
         <h2>Women's World Cup Player Searches</h2>
+          <PlayersList players={this.state.players} />
       </div>
     );
   }

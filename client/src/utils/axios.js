@@ -1,11 +1,15 @@
-import React from 'react'
-import axios from 'axios'
+// import axios from 'axios'
+// import React, {useState} from 'react'
 
-export default function useAxios(userLink)
-axios.get(`${userLink}`)
-    this.render(res => {
-      this.setState({players: res.data})
-    })
-      .catch(err=> {
-        console.log(err)
-      })
+// //not working at the moment. Will attempt later.
+
+// export default function useAxios() {
+//     axios.get('http://localhost:5000/api/players')
+//     .then(response => {
+//         this.setState({players: response.data})
+//         console.log(this.state.players)
+//       })
+//       .catch(err => {
+//         console.log(err)
+//       })
+//     }
