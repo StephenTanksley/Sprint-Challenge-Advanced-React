@@ -12,7 +12,8 @@ export const Container = styled.div`
 `
 
 export const CardDisplay = styled.div`
-
+    justify-content: center;
+    align-items: center;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
