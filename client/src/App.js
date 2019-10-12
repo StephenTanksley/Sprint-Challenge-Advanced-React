@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import DarkButton from './components/DarkButton'
 import axios from 'axios'
 import './App.css';
 import PlayersList from './components/PlayersList';
@@ -25,9 +26,7 @@ class App extends Component {
     return (
       <div className="App">
         <h2>Women's World Cup Player Searches</h2>
-        {/* <button 
-          className="dark-button"
-          onClick={e => {}>Dark Mode</button> */}
+        <DarkButton />
           <PlayersList players={this.state.players} />
       </div>
     );
