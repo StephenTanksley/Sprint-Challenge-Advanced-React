@@ -6,7 +6,7 @@ import PlayersList from './components/PlayersList';
 class App extends Component {
   constructor () {
     super ();
-    this.state = { }
+    this.state = {}
   }
 
   componentDidMount() {
