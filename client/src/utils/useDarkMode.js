@@ -2,16 +2,15 @@ import {useEffect} from 'react'
 import { useLocalStorage } from './useLocalStorage'
 
 const useDarkMode = () => {
-    const [toggle, setToggle] = useLocalStorage('toggle')
-    //be more explicit with what 'toggle' refers to.
+    const [darkMode, setDarkMode] = useLocalStorage('dark-mode')
     
     useEffect(() => {
-        toggle 
+        darkMode 
         ? document.body.classList.add('dark-mode') 
         : document.body.classList.remove('dark-mode')
-    }, [toggle])
+    }, [darkMode])
 
-    return [toggle, setToggle]
+    return [darkMode, setDarkMode]
 }
 
 export default useDarkMode;

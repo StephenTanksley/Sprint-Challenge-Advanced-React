@@ -10,12 +10,15 @@ afterEach(rtl.cleanup);
 test('cards are rendered', () => {
     const wrapper = rtl.render(<PlayersCard />)
     const name = wrapper.getByText('Name: ')
+
     expect(name).toBeVisible()
 
     const country = wrapper.getByText('Country: ')
+
     expect(country).toBeVisible()
 
     const searches = wrapper.getByText('Searches: ')
+    
     expect(searches).toBeVisible()
 
   })
