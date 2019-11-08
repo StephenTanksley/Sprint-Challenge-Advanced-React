@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import DarkButton from './components/DarkButton'
+import axios from 'axios'
 import './App.css';
+import PlayersList from './components/PlayersList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor () {
+    super ();
+    this.state = {}
+  }
+
+  componentDidMount() {
+    axios.get('http://localhost:5000/api/players')
+    .then(response => {
+        this.setState({players: response.data})
+        console.log(this.state.players)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    }
+
+  render () {
+    return (
+      <div className="App">
+        <h2>Women's World Cup Player Searches</h2>
+        <DarkButton />
+          <PlayersList players={this.state.players} />
+      </div>
+    );
+  }
 }
-
 export default App;
